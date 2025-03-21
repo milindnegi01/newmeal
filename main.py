@@ -5,8 +5,6 @@ import asyncpg
 import random
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
-import psycopg2
-import asyncio
 
 
 # Load environment variables
@@ -28,13 +26,8 @@ SUPABASE_DB_URL = os.getenv("SUPABASE_DB_URL")
 MEALDB_API_URL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
 
 # Async function to connect to Supabase PostgreSQL
-def get_db_connection():
-    try:
-        conn = psycopg2.connect(SUPABASE_DB_URL)
-        return conn
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
-
+async def get_db_connection():
+    return await asyncpg.connect(SUPABASE_DB_URL)
 
 # API Endpoint to fetch meal details
 @app.get("/meals/{meal_name}")
