@@ -1,5 +1,7 @@
 fastapi
 uvicorn
-asyncpg
 requests
 python-dotenv
+asyncpg
+psycopg2
+aiohttp
