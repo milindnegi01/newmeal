@@ -1,16 +1,5 @@
-<<<<<<< HEAD
 fastapi==0.104.1
 uvicorn==0.24.0
 httpx==0.25.1
 asyncpg==0.29.0
 python-dotenv==1.0.0
-=======
-fastapi
-uvicorn
-requests
-python-dotenv
-asyncpg
-psycopg2
-aiohttp
-httpx
->>>>>>> 571dd7b428e124ec8b3c854ffb8e98ca8c2fd092
